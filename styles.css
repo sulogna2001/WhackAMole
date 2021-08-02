@@ -1,0 +1,87 @@
+body{
+  background-color: #32046a;
+  font-family: 'Dancing Script', cursive;
+  cursor: none;
+}
+
+.heading{
+  color: white;
+  text-align:center;
+  padding: 2%;
+  font-size: 100px;
+}
+.score{
+  font-size: 3rem;
+  text-align: center;
+  color:white;
+  font-size: 2rem;
+}
+.holescont{
+display: grid;
+grid-template-columns: repeat(3, 200px);
+grid-gap: 1.5rem;
+padding: 2.5rem;
+justify-content: center;
+}
+.hole{
+position: relative;
+height: 80px;
+width:80px;
+border-radius: 50%;
+background-color: black;
+overflow: hidden;
+}
+.mole{
+  
+  position: absolute;
+  z-index: 1;
+  height: 5 px;
+  width: 45px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: appear 0.3s linear;
+  pointer-events: none;
+}
+@keyframes appear {
+  from{
+    bottom: -60px;
+  }
+  to{
+    bottom: 0;
+  }
+}
+.buttons{
+  margin-top: 3rem;
+  text-align: center;
+}
+.buttons button{
+  padding: 15px 45px;
+  background-color: inherit;
+  border: 1px solid white;
+  color: white;
+  border-radius: 3px;
+  outline: none;
+
+}
+button.stop{
+  display: none;
+}
+.cursor img{
+  position: absolute;
+  z-index: 2;
+  width: 125px;
+  height: 125px;
+  transform: translate(-10px,-40px);
+  pointer-events: none;
+ 
+}
+@keyframes hit {
+  
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(-30deg);
+  }
+}
